@@ -6,9 +6,14 @@ using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-
 using Microsoft.EntityFrameworkCore;
 using Persistence;
+using Application.Activities;
+using Application.Core;
+using AutoMapper;
+using MediatR;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.OpenApi.Models;
 
 namespace API
 {
@@ -39,11 +44,12 @@ namespace API
             {
                 opt.AddPolicy("CorsPolicy", policy =>
                 {
-                    policy.AllowAnyMethod().AllowAnyHeader().WithOrigins("https://localhost:44324/");
-                    policy.AllowAnyMethod().AllowAnyHeader().WithOrigins("http://localhost:3000");
-                    policy.AllowAnyMethod().AllowAnyHeader().WithOrigins("http://localhost:5000");
+                    policy.AllowAnyMethod().AllowAnyHeader().WithOrigins(new string[] { "http://localhost:3000", "test" });
+                    policy.AllowAnyMethod().AllowAnyHeader().WithOrigins(new string[] { "http://localhost:5000", "test" });
                 });
             });
+            services.AddMediatR(typeof(List.Handler).Assembly);
+            services.AddAutoMapper(typeof(MappingProfiles).Assembly);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
