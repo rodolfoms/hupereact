@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@microsoft/signalr": "^5.0.8",
     "@testing-library/jest-dom": "^5.11.6",
     "@testing-library/react": "^11.2.2",
     "@testing-library/user-event": "^12.3.0",
@@ -12,18 +13,20 @@
     "@types/react": "^16.14.2",
     "@types/react-calendar": "^3.4.2",
     "@types/react-dom": "^16.9.10",
+    "@types/react-infinite-scroller": "^1.2.2",
     "@types/react-router": "5.1.2",
-    "@types/react-router-dom": "5.1.0",
     "@types/reactstrap": "8.0.6",
     "@typescript-eslint/parser": "^2.5.0",
     "axios": "^0.21.1",
     "connected-react-router": "6.5.2",
     "cross-env": "6.0.3",
+    "date-fns": "^2.23.0",
     "eslint": "^6.5.1",
     "eslint-plugin-flowtype": "^3.13.0",
     "eslint-plugin-import": "2.18.2",
     "eslint-plugin-jsx-a11y": "6.2.3",
     "eslint-plugin-react": "7.16.0",
+    "formik": "^2.2.9",
     "history": "4.10.1",
     "jquery": "^3.5.1",
     "merge": "1.2.1",
@@ -33,7 +36,11 @@
     "popper.js": "^1.16.0",
     "react": "16.11.0",
     "react-calendar": "^3.4.0",
+    "react-cropper": "^2.1.8",
+    "react-datepicker": "^4.1.1",
     "react-dom": "16.11.0",
+    "react-dropzone": "^11.3.4",
+    "react-infinite-scroller": "^1.2.4",
     "react-router": "5.1.2",
     "react-router-dom": "5.1.2",
     "react-scripts": "^3.4.4",
@@ -42,7 +49,8 @@
     "semantic-ui-react": "^2.0.3",
     "svgo": "1.3.0",
     "typescript": "^4.1.2",
-    "web-vitals": "^0.2.4"
+    "web-vitals": "^0.2.4",
+    "yup": "^0.32.9"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -61,7 +69,10 @@
     "not op_mini all"
   ],
   "devDependencies": {
+    "@types/react-datepicker": "^4.1.4",
+    "@types/react-router-dom": "^5.1.0",
     "@types/uuid": "^8.3.1",
+    "@types/yup": "^0.29.13",
     "uuid": "^8.3.2"
   }
 }
