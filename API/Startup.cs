@@ -13,12 +13,14 @@ using Microsoft.EntityFrameworkCore;
 using Persistence;
 using Application.Activities;
 using Application.Core;
+using Application.Interfaces;
 using AutoMapper;
 using FluentValidation.AspNetCore;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 using API.Extensions;
+using Infrastructure.Security;
 
 namespace API
 {
@@ -63,6 +65,7 @@ namespace API
             });
             services.AddMediatR(typeof(List.Handler).Assembly);
             services.AddAutoMapper(typeof(MappingProfiles).Assembly);
+            services.AddScoped<IUserAccessor, UserAccessor>();
             services.AddIdentityServices(Configuration);
         }
 
